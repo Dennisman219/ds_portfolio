@@ -11,13 +11,13 @@ Please see [reflectie.md](reflectie.md) for my three starr reflections.
 
 ## Research Project
 ### Task definition
-TNO is a partner in the TITANIUM (Tools for the Investigation of Transactions in Underground Markets) project set up by the European Union. International law enforcement in intrerested in gaining insights into the transaction on the dark web. TNO has created the assignment to create a classifier which can take text-based content sourced from the dark web and classify this text into a category. This provides information about what topics are being discussed. Interpol has provided a list of categories to use for classification.
+TNO is a partner in the [TITANIUM](https://www.titanium-project.eu/partners/) (Tools for the Investigation of Transactions in Underground Markets) project set up by the European Union. International law enforcement in intrerested in gaining insights into the transaction on the dark web. TNO has created the assignment to create a classifier which can take text-based content sourced from the dark web and classify this text into a category. This provides information about what topics are being discussed. Interpol has provided a list of categories to use for classification.
 
 We have formulated the following research question:
 ```
 How can a pipeline be created that classifies dark web text based content to a predetermined topics list?
 ```
-We have formulated the follow subquestions:
+We have formulated the following subquestions:
 ```
 - How are the darkweb forums / markets structured?
 - What labels of the dataset provided by TNO are relevant for the research?
@@ -65,8 +65,8 @@ k = np.unique(categories).shape[0]
 km = KMeans(n_clusters=k, init='k-means++', max_iter=1000, n_init=1)
 ```
 The model is configured to create as many clusters as there are categories. When using full hierarchical categories k = 104, when using primary categories k = 14.\
-The model is configured to use 'k-means++' initialization. This is described as a 'smart' initialization technique and is beneficial to speed.\
-A max_iter of 1000 was chosen over the default of 300 to ensure plenty of iterations to form clusters.\
+The model is configured to use 'k-means++' initialization. This is described as a 'smart' initialization technique to figure out the best starting distribution of clusters and is beneficial to speed.\
+A max_iter of 1000 was chosen over the default of 300 to ensure plenty of iterations to form clusters. We are more interested in quickly evaluating kmeans rather than getting perfect clusters.\
 An n_init of 1 was chosen over the default of 10 in order to force the model to try one random starting distribution of clusters to save time.
 
 ### Training a model
@@ -116,7 +116,7 @@ print("MNB accuracy:  {}".format(accuracy))
 #print("    recall:    {}".format(recall))
 #print("    precision: {}".format(precision))
 ```
-Recall and precision we excluded for both models because they were exactly the same as accuracy, which I presume to be an error (see below).
+Recall and precision we excluded for both models because they were exactly the same as accuracy, which I presume to be an error (see below). This is a shame since testing recall and precision is usefull in our biased dataset.
 ```bash
 SGD accuracy:  0.9372258152051015
 #   recall:    0.9372258152051015
@@ -208,7 +208,7 @@ A TSNE/tf-idf projection of the full dataset shows that the dataset is dominated
 A Biased dataset can result in poor performance of classification. We experimented with balancing the dataset and comparing the performance. The plot also shows that the documents about drugs are spread over a very large area in the vectorspace. This could result in a model leaning towards the category Drugs when unsure how to classify a document.
 
 ### Data cleansing
-The Agora datafile contained several syntax errors with resulted in faulty parsing of the file. The lines containing errors were removed or fixed and a new file without errors called 'agorb.csv' has been created.
+The Agora data file contained several syntax errors with resulted in faulty parsing of the file. The lines containing errors were removed or fixed and a new file without errors called 'agorb.csv' has been created.
 
 For example: The following row contains several listings. The syntax in this row was faulty and has been fixed, adding several new datapoints to the set.
 
