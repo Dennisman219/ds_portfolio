@@ -152,6 +152,8 @@ I have looked into many different Data Science related topics for this minor. I 
 - What models are available for classification
 - Validating the performance of a model
 
+My most used sources are the [sklearn documentation](https://scikit-learn.org/) and the slides from this minors lectures.
+
 ### Terminology
 I created the following list of definitions of terms used most often in our project:
 
@@ -203,7 +205,7 @@ A TSNE/tf-idf projection of the full dataset shows that the dataset is dominated
 [tsne-volledig]: img/tsne-tfidf-volledig.png
 ![tsne-volledig] TSNE plots were created with [tfidf.py](src/tfidf.py)
 
-A Biased dataset can result in poor performance of classification. We experimented with balancing the dataset and comparing the performance.
+A Biased dataset can result in poor performance of classification. We experimented with balancing the dataset and comparing the performance. The plot also shows that the documents about drugs are spread over a very large area in the vectorspace. This could result in a model leaning towards the category Drugs when unsure how to classify a document.
 
 ### Data cleansing
 The Agora datafile contained several syntax errors with resulted in faulty parsing of the file. The lines containing errors were removed or fixed and a new file without errors called 'agorb.csv' has been created.
