@@ -138,7 +138,7 @@ TODO
 ## Domain Knowledge
 ### Introduction of subject field
 We are building a classifier which is trained classifies text from listings from marketplaces on the dark web.\
-The dark web is a part of the deep web.\ The deep web is a part of the internet which is not indexable by search engines like Google or crawlers. The dark web adds another layer to this by applying encryption and using peer-to-peer networking. This results in user being anonymous and untrackable. The user of the dark web use it to sell illegal items. International law inforcement is interested in gaining insights into transactions made via the dark web. Our classifier can take text-based content from listing of items being sold and predict to which category the item belongs.
+The dark web is a part of the deep web. The deep web is a part of the internet which is not indexable by search engines like Google or crawlers. The dark web adds another layer to this by applying encryption and using peer-to-peer networking. This results in user being anonymous and untrackable. The user of the dark web use it to sell illegal items. International law inforcement is interested in gaining insights into transactions made via the dark web. Our classifier can take text-based content from listing of items being sold and predict to which category the item belongs.
 
 ### Literature research
 I have looked into many different Data Science related topics for this minor. I spent the most effort into gaining knowledge about topics related to our project, such as:
@@ -276,7 +276,7 @@ A TSNE/tf-idf plot of a balanced dataset shows better clusters. This plot suppor
 I have given more than two presentations. I do not remember which ones exactly. I do remember the following ones:
 - Technical presentation about NLP ([slides](https://docs.google.com/presentation/d/1rSYB52LkQphUzZceA-eIvbsHqV2y7bYZiyG5Nq0XZLM/edit?usp=sharing))
 - Preperation of final presentation (10th of januari) ([slides](https://drive.google.com/file/d/181d7qLdFrMkpcqN7AoUJOiJLNOWKkO65/view?usp=sharing))
-- TODO
+- First open presentation, general information of project (27th of september) ([slides](https://drive.google.com/file/d/16fzaIPteO1SVVhCnE60oTeO4QPpo-WuU/view?usp=sharing))
 
 ### Writing paper
 I contributed mostly to the following paragraphs of the paper:
