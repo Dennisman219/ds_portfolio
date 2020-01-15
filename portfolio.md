@@ -208,6 +208,11 @@ A Biased dataset can result in poor performance of classification. We experiment
 ### Data cleansing
 The Agora datafile contained several syntax errors with resulted in faulty parsing of the file. The lines containing errors were removed or fixed and a new file without errors called 'agorb.csv' has been created.
 
+For example: The following row contains several listings. The syntax in this row was faulty and has been fixed, adding several new datapoints to the set.
+
+[csv_fout]: img/csv_fout.png
+![csv_fout]
+
 ### Data preparation
 I created the program [prep.py](src/prep.py) to process the data. This program can undertake several operations to prepare the data for vectorization and machine learning.
 
