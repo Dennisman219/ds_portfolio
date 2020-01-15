@@ -284,7 +284,7 @@ A TSNE/tf-idf plot of a balanced dataset shows better clusters. This plot suppor
 ## Communication
 ### Presentations
 I have given more than two presentations. I do not remember which ones exactly. I do remember the following ones:
-- Technical presentation about NLP ([slides](https://docs.google.com/presentation/d/1rSYB52LkQphUzZceA-eIvbsHqV2y7bYZiyG5Nq0XZLM/edit?usp=sharing))
+- Technical presentation about NLP (11th of november ?) ([slides](https://docs.google.com/presentation/d/1rSYB52LkQphUzZceA-eIvbsHqV2y7bYZiyG5Nq0XZLM/edit?usp=sharing))
 - Preperation of final presentation (10th of januari) ([slides](https://drive.google.com/file/d/181d7qLdFrMkpcqN7AoUJOiJLNOWKkO65/view?usp=sharing))
 - First open presentation, general information of project (27th of september) ([slides](https://drive.google.com/file/d/16fzaIPteO1SVVhCnE60oTeO4QPpo-WuU/view?usp=sharing))
 
