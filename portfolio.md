@@ -3,11 +3,11 @@
 ### Completion
 I have completed 10/11 courses (91%).
 
-[datacamp]: datacamp.png
+[datacamp]: img/datacamp.png
 ![datacamp]
 
 ## Reflection
-Please see reflection.md for my three starr reflections.
+Please see [reflectie.md](reflectie.md) for my three starr reflections.
 
 ## Research Project
 ### Task definition
@@ -32,29 +32,31 @@ We have formulated the follow subquestions:
 ```
 
 ### Evaluation 
-As mentioned in the paper, the two dataset we used are structured quite differently. The Agora data features many rows but little text per row and the Web-IQ data features fewer rows but more text per row. We achieved the highest scores when training and testing with the Agora set.\
+As mentioned in the paper, the two dataset we used (Agora and Web-IQ) are structured quite differently. The Agora data features many rows but little text per row and the Web-IQ data features fewer rows but more text per row. We achieved the highest scores when training and testing with the Agora set.\
 Training on the Agora data and testing on the Web-IQ data results in low scores. I suspect we would be able to achieve higher scores if we could combine both dataset together in order to train a model on mixed dataset features many records with varying length per record.
 
 ### Conlusion
 The research found that the best pipeline for classifying text-based content consisted of a preprocessing component that minimally alters the text. The vectorization component used tf-idf and applies n-grams to create shingles of two words to create feature vectors of the used corpus. Finally, a Linear SVC model was trained that can be used to classify new data.
 
 ### Planning
-At the beginning of the project a general planning was created to which we can refer to keep track of our general progress and things to do. In this planning we tried to follow a itterative process, i.e. we can return to tasks after 'completing' it earlier.
+At the beginning of the project a general planning was created to which we can refer to keep track of our general progress and things to do. In this planning we tried to follow a itterative process, i.e. we can return to tasks after later after working on it earlier.
 
-[general_planning]: general_planning.png
+[general_planning]: img/general_planning.png
 ![general_planning]
 
-Later, when more detailed goals and to-do points were defined we created a trello board in which we created epics and tasks which were picked up and completed in sprints of two weeks. Tasks were assigned to a person either at creation or when someone decided to pick up a open task.
+Later, when more detailed goals and to-do points were defined we created [a trello board](https://trello.com/b/cfgVjvpE) in which we created epics and tasks which were picked up and completed in sprints of two weeks. Tasks were assigned to a person either at creation or when someone decided to pick up a open task.
 
-[trello_board]: trello_board.png
+[trello_board]: img/trello_board.png
 ![trello_board]
 
 ## Predictive Analysis
 ### Selecting a model
-In the beginning of the project we wanted to see if unsupervised machine learning was promising enough to continue using. I created the script kmtest.py which uses tf-idf and a k-means clustering algorithm to cluster the vectors together. This model was selected for a couple of reasons:
+In the beginning of the project we wanted to see if unsupervised machine learning was promising enough to continue using. I created the script [kmtest.py](src/kmtest.py) which uses tf-idf and a k-means clustering algorithm to cluster the vectors together. This model was selected for a couple of reasons:
 - The model is described as a simple model which might be smart given my limited understanding at the time of creation.
 - The model is unsupervised, which is what we wanted to try out.
 - The model clusters the vectors which aligns best with our classifiction problem.
+
+Later we decided not to persue unsupervised learning further since our data is labeled so supervised learning seems more logical and easier. Also it is difficult to validate the performance of unsupervised models.
 
 ### Configuring a model
 The model is configured with the following lines:
@@ -68,7 +70,7 @@ A max_iter of 1000 was chosen over the default of 300 to ensure plenty of iterat
 An n_init of 1 was chosen over the default of 10 in order to force the model to try one random starting distribution of clusters to save time.
 
 ### Training a model
-I created the script np_tfidf_ml.py in which I train two models on tf-idf vectors.\
+I created the script [np_tfidf_ml.py](src/np_tfidf_ml.py) in which I train two models on tf-idf vectors.\
 This is an example of training a SGDClassifier model from the sklearn library, which uses stochastic gradient descent (SGD) to train a support vector machine (SVM).
 ```python
 sgd = SGDClassifier()
@@ -131,7 +133,7 @@ MNB accuracy:  0.40902021772939345
 Both models perform quite poorly, but the MNB score the lowest by far. It seems this model does not perform well when using litte data.
 
 ### Visualising output of model
-
+TODO
 
 ## Domain Knowledge
 ### Introduction of subject field
@@ -193,8 +195,8 @@ Agora: A marketplace on the dark web which no longer exists. We use the term to 
 ### Data exploration
 A TSNE/tf-idf projection of the full dataset shows that the dataset is dominated by listings about Drugs.
 
-[tsne-volledig]: tsne-tfidf-volledig.png
-![tsne-volledig] TSNE plots were created with tfidf.py
+[tsne-volledig]: img/tsne-tfidf-volledig.png
+![tsne-volledig] TSNE plots were created with [tfidf.py](src/tfidf.py)
 
 A Biased dataset can result in poor performance of classification. We experimented with balancing the dataset and comparing the performance.
 
@@ -202,7 +204,7 @@ A Biased dataset can result in poor performance of classification. We experiment
 The Agora datafile contained several syntax errors with resulted in faulty parsing of the file. The lines containing errors were removed or fixed and a new file without errors called 'agorb.csv' has been created.
 
 ### Data preparation
-I created the program prep.py to process the data. This program can undertake several operations to prepare the data for vectorization and machine learning.
+I created the program [prep.py](src/prep.py) to process the data. This program can undertake several operations to prepare the data for vectorization and machine learning.
 
 The listing title and description is combined to create a single predictor.
 ```python
@@ -255,7 +257,7 @@ if self.catocur_max > 0:
 		catocur[c] = 1
 ```
 
-In the script tno_prepvec_agora.py I decided to remove listing from the 'Other' category as these were useless to training.
+In the script [tno_prepvec_agora.py](src/tno_prepvec_agora.py) I decided to remove listing from the 'Other' category as these were useless to training.
 ```python
 csv = csv[csv[target_column] != 'Other']
 ```
@@ -266,7 +268,7 @@ I created [this](https://docs.google.com/spreadsheets/d/1gN1_2B79F_eKS_axDTHM5dB
 ### Data Visualisation
 A TSNE/tf-idf plot of a balanced dataset shows better clusters. This plot supports our decision that this dataset is usable for training a classification model and that balancing the data should enhance performance. Some listings should still be difficult to classify, as the plot shows since many listings are grouped and mixed together in the center.
 
-[tsne-balanced]: tsne-tfidf-balance500.png
+[tsne-balanced]: img/tsne-tfidf-balance500.png
 ![tsne-balanced]
 
 ## Communication
@@ -274,7 +276,7 @@ A TSNE/tf-idf plot of a balanced dataset shows better clusters. This plot suppor
 I have given more than two presentations. I do not remember which ones exactly. I do remember the following ones:
 - Technical presentation about NLP ([slides](https://docs.google.com/presentation/d/1rSYB52LkQphUzZceA-eIvbsHqV2y7bYZiyG5Nq0XZLM/edit?usp=sharing))
 - Preperation of final presentation (10th of januari) ([slides](https://drive.google.com/file/d/181d7qLdFrMkpcqN7AoUJOiJLNOWKkO65/view?usp=sharing))
-- 
+- TODO
 
 ### Writing paper
 I contributed mostly to the following paragraphs of the paper:
