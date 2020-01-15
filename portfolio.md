@@ -133,7 +133,12 @@ MNB accuracy:  0.40902021772939345
 Both models perform quite poorly, but the MNB score the lowest by far. It seems this model does not perform well when using litte data.
 
 ### Visualising output of model
-TODO
+The following plot shows a PCA representation of vectors with the centers the kmeans algorithm found created by [kmtest.py](src/kmtest.py).
+
+[km_pca]: img/km_pca.png
+![km_pca] For the sake of demonstration the plot is created on a limited dataset containing 7 categories/clusters.
+
+The plot shows that the kmeans algorithm is able to identify the centers of the clusters quite well. The PCA algorithm places some vectors in the same space.
 
 ## Domain Knowledge
 ### Introduction of subject field
